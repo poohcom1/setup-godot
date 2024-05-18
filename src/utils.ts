@@ -109,6 +109,7 @@ interface SemanticVersion {
 
 /** Godot download url prefix. */
 const GODOT_URL_PREFIX =
+  process.env.GODOT_URL_PREFIX ||
   'https://github.com/godotengine/godot-builds/releases/download/'
 /** Godot filename prefix. */
 const GODOT_FILENAME_PREFIX = 'Godot_v'
