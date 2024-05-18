@@ -511,6 +511,11 @@ function findExecutablesRecursively(platform, dir, indent) {
                             isExecutable = true;
                         }
                     }
+                    else if (platform instanceof Linux) {
+                        if (file.name.toLowerCase().endsWith('.x86_64')) {
+                            isExecutable = true;
+                        }
+                    }
                     else {
                         try {
                             fs.accessSync(filePath, fs.constants.X_OK);

@@ -294,6 +294,10 @@ export async function findExecutablesRecursively(
           if (file.name.toLowerCase().endsWith('.exe')) {
             isExecutable = true
           }
+        } else if (platform instanceof Linux) {
+          if (file.name.toLowerCase().endsWith('.x86_64')) {
+            isExecutable = true
+          }
         } else {
           try {
             fs.accessSync(filePath, fs.constants.X_OK)
